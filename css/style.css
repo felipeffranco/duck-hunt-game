@@ -4,35 +4,43 @@
 }
 
 body {
-    background: blue url("../images/background.png") no-repeat cover center center;
+    background: url('../images/background.png') no-repeat center bottom;
+    background-size: cover;
+    height: 100vh;
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
 }
 
-#dog {
-    background: red;
-    position: absolute;
-    top: 520px;
-    left: 580px; 
-    width: 200px;
-    height: 200px;
+.dog { 
+    width: 150px;
+    height: 150px;
 }
+
+
+
 
 #duck1 {
     position: absolute;
     top: 12px;
-    width: 100px;
-    animation: duck1 6.5s infinite;
+    width: 40px;
+    height: 33px;
+    animation: duck1 8.5s infinite; 
+    background: url(../images/sprites.png) no-repeat 4px -150px;
 }
 
 @keyframes duck1 { 
     10% {
-        left: 13px;
-        top: 3px;
+        left: 10%;
+        top: 65%;
+    }
+    20% { 
+        left: 25%;
+        top: 26%;
     }
     30% { 
-        left: 124px;
-        top: 13px;
-    }
-    36% { 
         left: 235px;
         top: 15px;
     }
@@ -40,23 +48,27 @@ body {
         left: 440px;
         top: 18px;
     }
-    56% { 
+    50% { 
         left: 666px;
         top: 23px;
     }
-    66% { 
+    60% { 
         left: 778px;
         top: 25px;
     }
-    78% { 
+    70% { 
         left: 885px;
         top: 28px;
     }
-    90% { 
+    80% { 
         left: 998px;
         top: 3px;
     }
-    99% { 
+    90% { 
+        left: 1700px;
+        top: 19px;
+    }
+    100% { 
         left: 1700px;
         top: 19px;
     }
@@ -186,9 +198,4 @@ body {
         left: 1689px;
         top: 12px;
     }
-}
-
-div {
-    width: 1477px;
-    height: 566px;
 }
