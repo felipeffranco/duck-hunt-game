@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: blue url("../images/background.png") no-repeat cover center center;
+}
+
+#dog {
+    background: red;
+    position: absolute;
+    top: 520px;
+    left: 580px; 
+    width: 200px;
+    height: 200px;
+}
+
+#duck1 {
+    position: absolute;
+    top: 12px;
+    width: 100px;
+    animation: duck1 6.5s infinite;
+}
+
+@keyframes duck1 { 
+    10% {
+        left: 13px;
+        top: 3px;
+    }
+    30% { 
+        left: 124px;
+        top: 13px;
+    }
+    36% { 
+        left: 235px;
+        top: 15px;
+    }
+    40% { 
+        left: 440px;
+        top: 18px;
+    }
+    56% { 
+        left: 666px;
+        top: 23px;
+    }
+    66% { 
+        left: 778px;
+        top: 25px;
+    }
+    78% { 
+        left: 885px;
+        top: 28px;
+    }
+    90% { 
+        left: 998px;
+        top: 3px;
+    }
+    99% { 
+        left: 1700px;
+        top: 19px;
+    }
+}
+
+#duck2 { 
+    position: absolute;
+    top: 24px;
+    width: 100px;
+    animation: duck2 6.5s infinite;
+}
+
+@keyframes duck2 { 
+    10% {
+        left: 223px;
+        top: 3px;
+    }
+    30% { 
+        left: 334px;
+        top: 6px;
+    }
+    36% { 
+        left: 425px;
+        top: 8px;
+    }
+    40% { 
+        left: 530px;
+        top: 8px;
+    }
+    56% { 
+        left: 666px;
+        top: 13px;
+    }
+    66% { 
+        left: 778px;
+        top: 15px;
+    }
+    78% { 
+        left: 995px;
+        top: 28px;
+    }
+    90% { 
+        left: 1299px;
+        top: 7px;
+    }
+}
+
+#duck3 { 
+    position: absolute;
+    top: 34px;
+    width: 100px;
+    animation: duck3 6.5s infinite;
+}
+
+@keyframes duck3 { 
+    10% {
+        left: 23px;
+        top: 53px;
+    }
+    30% { 
+        left: 124px;
+        top: 13px;
+    }
+    36% { 
+        left: 255px;
+        top: 75px;
+    }
+    40% { 
+        left: 560px;
+        top: 88px;
+    }
+    56% { 
+        left: 566px;
+        top: 23px;
+    }
+    66% { 
+        left: 671px;
+        top: 25px;
+    }
+    78% { 
+        left: 875px;
+        top: 28px;
+    }
+    90% { 
+        left: 1489px;
+        top: 2px;
+    }
+}
+
+#duck4 { 
+    position: absolute;
+    top: 45px;
+    width: 100px;
+    animation: duck4 6.5s infinite;
+}
+
+@keyframes duck4 { 
+    10% {
+        left: 13px;
+        top: 5px;
+    }
+    30% { 
+        left: 121px;
+        top: 30px;
+    }
+    36% { 
+        left: 125px;
+        top: 35px;
+    }
+    40% { 
+        left: 180px;
+        top: 38px;
+    }
+    56% { 
+        left: 266px;
+        top: 63px;
+    }
+    66% { 
+        left: 477px;
+        top: 85px;
+    }
+    78% { 
+        left: 879px;
+        top: 98px;
+    }
+    90% { 
+        left: 1689px;
+        top: 12px;
+    }
+}
+
+div {
+    width: 1477px;
+    height: 566px;
+}
