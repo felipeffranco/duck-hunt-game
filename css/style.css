@@ -4,6 +4,14 @@
 }
 
 body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
     background: url('../images/background.png') no-repeat center bottom;
     background-size: cover;
     height: 100vh;
@@ -12,15 +20,13 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     overflow: hidden;
-}
+}  
 
 .dog { 
     width: 150px;
     height: 150px;
+    border: 0;
 }
-
-
-
 
 #duck1 {
     position: absolute;
