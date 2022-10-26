@@ -61,8 +61,14 @@ class NewGame {
         this.totalTargets = totalTargets;
     }
 
-    start() {
-        
+    start() { //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
+        if(level == 1) {
+
+        } else if (level == 2) {
+
+        } else if (level == 3) {
+
+        }
     }
 
     pause() {}
