@@ -44,40 +44,26 @@ After each shoot:
         reduce 1 bullet
 */
 
-class targets {
+class Targets {
     constructor(urlImage, points) {
         this.urlImage = urlImage;
         this.points = points;
     }
 }
 
-class newGame {
-    constructor(targets, level, waves, lifes, totalScore, totalTargets) {
+class NewGame {
+    constructor(targets, waves, lifes, totalScore, totalTargets) {
         this.targets = targets;
-        this.level = level;
+        this.level = 1;
         this.waves = waves;
         this.lifes = lifes;
         this.totalScore = totalScore;
         this.totalTargets = totalTargets;
     }
 
-    render() {
-        const render = document.getElementById('body');
-        const background = document.createElement('section');
-        background.className = 'background';
-        background.innerHTML = `
-            <div class="flight-area"></div>
-            <div class="infos">
-
-            </div>
-            <div class="shortcuts">
-                <a href=""></a>
-            </div>
-        `;
-        render.append(background);
+    start() {
+        
     }
-
-    start() {}
 
     pause() {}
 
@@ -85,12 +71,15 @@ class newGame {
 
     fullscreen() {}
 
-    shoot() {}
+    shoot() {
+        //pensar de uma forma simples 
+        //console.log para click
+    }
 
     win() {}
 
     lose() {}
 }
 
-let game = new newGame();
+let game = new NewGame();
 game.render();
