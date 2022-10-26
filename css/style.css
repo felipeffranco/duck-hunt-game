@@ -17,25 +17,60 @@ body {
     height: 100vh;
     margin-right: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
 }  
 
 .flight-area {
     width: 100vw;
-    height: 68vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex: 2;
     background-color: red;
     opacity: 0.7;
 }
 
-.dog { 
-    width: 150px;
-    height: 150px;
-    border: 0;
+.infos {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.lifes {
+    padding: 8px 16px;  
+    border-radius: 16px;
+    background-color: #212121;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+.lifes span {
+    color: red;
+}
+
+.shortcuts {
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+.shortcuts a { 
+    margin-right: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
 
 #duck1 {
     position: absolute;

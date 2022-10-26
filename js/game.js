@@ -62,12 +62,13 @@ class NewGame {
     }
 
     start() { //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
-        if(level == 1) {
-
-        } else if (level == 2) {
-
-        } else if (level == 3) {
-
+        if(this.level == 1) {
+            console.log('level 1')
+            
+        } else if (this.level == 2) {
+            console.log('level 2')
+        } else if (this.level == 3) {
+            console.log('level 3')
         }
     }
 
@@ -88,4 +89,4 @@ class NewGame {
 }
 
 let game = new NewGame();
-game.render();
+game.start();
