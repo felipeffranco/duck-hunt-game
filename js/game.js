@@ -3,7 +3,6 @@
 ** Author: Felipe Franco
 */
 
-
 /* 
 
 NEEDS
@@ -69,7 +68,7 @@ class newGame {
         background.innerHTML = `
             <div class="flight-area"></div>
             <div class="infos">
-                
+
             </div>
             <div class="shortcuts">
                 <a href=""></a>
