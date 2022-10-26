@@ -9,7 +9,7 @@ body {
     padding: 0;
 }
 
-canvas {
+.background {
     width: 100vw;
     height: 100vh;
     background: url('../images/background.png') no-repeat center bottom;
@@ -18,9 +18,18 @@ canvas {
     margin-right: 50px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
     overflow: hidden;
 }  
+
+.flight-area {
+    width: 100vw;
+    height: 68vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: red;
+    opacity: 0.7;
+}
 
 .dog { 
     width: 150px;
