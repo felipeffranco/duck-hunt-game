@@ -65,7 +65,6 @@ class NewGame {
     }
 
     start() {
-
         console.log('start');
 
         const firstDuck = document.createElement('div')
@@ -100,8 +99,6 @@ class NewGame {
         console.log('fullscreen');
 
     }
-
-
 
     win() { }
 
