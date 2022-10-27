@@ -25,8 +25,8 @@ body {
 .flight-area {
     width: 100vw;
     height: 70vh;
-    background-color: red;
-    opacity: 0.7;
+    /*background-color: red;
+    opacity: 0.7;*/
 }
 
 .infos {
@@ -182,89 +182,5 @@ body {
     90% { 
         left: 1299px;
         top: 7px;
-    }
-}
-
-#duck3 { 
-    position: absolute;
-    top: 34px;
-    width: 100px;
-    animation: duck3 6.5s infinite;
-}
-
-@keyframes duck3 { 
-    10% {
-        left: 23px;
-        top: 53px;
-    }
-    30% { 
-        left: 124px;
-        top: 13px;
-    }
-    36% { 
-        left: 255px;
-        top: 75px;
-    }
-    40% { 
-        left: 560px;
-        top: 88px;
-    }
-    56% { 
-        left: 566px;
-        top: 23px;
-    }
-    66% { 
-        left: 671px;
-        top: 25px;
-    }
-    78% { 
-        left: 875px;
-        top: 28px;
-    }
-    90% { 
-        left: 1489px;
-        top: 2px;
-    }
-}
-
-#duck4 { 
-    position: absolute;
-    top: 45px;
-    width: 100px;
-    animation: duck4 6.5s infinite;
-}
-
-@keyframes duck4 { 
-    10% {
-        left: 13px;
-        top: 5px;
-    }
-    30% { 
-        left: 121px;
-        top: 30px;
-    }
-    36% { 
-        left: 125px;
-        top: 35px;
-    }
-    40% { 
-        left: 180px;
-        top: 38px;
-    }
-    56% { 
-        left: 266px;
-        top: 63px;
-    }
-    66% { 
-        left: 477px;
-        top: 85px;
-    }
-    78% { 
-        left: 879px;
-        top: 98px;
-    }
-    90% { 
-        left: 1689px;
-        top: 12px;
     }
 }
