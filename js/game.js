@@ -45,7 +45,7 @@ After each shoot:
 */
 
 import Duck from './duck.js'
-//console.log(Duck)
+console.log(Duck)
 
 class NewGame {
     constructor(targets, waves, lifes, totalScore, totalTargets) {
