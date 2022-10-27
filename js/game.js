@@ -45,17 +45,10 @@ After each shoot:
 */
 
 import Duck from './duck.js'
-console.log(Duck)
+//console.log(Duck)
 
 class NewGame {
-    constructor(targets, waves, lifes, totalScore, totalTargets) {
-        this.targets = targets;
-        this.level = 1;
-        this.waves = waves;
-        this.lifes = lifes;
-        this.totalScore = totalScore;
-        this.totalTargets = totalTargets;
-
+    constructor() {
         this.linkButtons()
     }
 
@@ -85,9 +78,12 @@ class NewGame {
         // }
     }
 
+    resumeGame() {
+        console.log('resume');
+    }
+
     pause() {
         console.log('pause');
-
     }
 
     mute() {
@@ -95,9 +91,17 @@ class NewGame {
 
     }
 
-    fullscreen() {
-        console.log('fullscreen');
-
+    openFullscreen() {
+        let body = document.documentElement;
+        if(body.requestFullscreen) {
+            body.requestFullscreen();
+        } else if(body.msRequestFullscreen) {
+            body.msRequestFullscreen();
+        } else if(body.mozRequestFullscreen) {
+            body.mozRequestFullscreen();
+        } else if(body.webkitRequestFullscreen) {
+            body.webkitRequestFullscreen();
+        }
     }
 
     win() { }
@@ -105,12 +109,12 @@ class NewGame {
     lose() { }
 
     linkButtons() {
-        document.querySelector('#start-game').addEventListener('click', this.start)
-        document.querySelector('#pause-game').addEventListener('click', this.pause)
-        document.querySelector('#mute-game').addEventListener('click', this.mute)
-        document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
+        let startGame = document.querySelector('#start-game').addEventListener('click', this.start)
+        let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
+        let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)
+        let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.Fullscreen)
     }
 }
 
-const game = new NewGame();
+let game = new NewGame();
 // game.start();

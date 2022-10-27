@@ -76,8 +76,12 @@ body {
     margin-right: 16px;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
+.shortcuts a:hover { 
+    opacity: 0.5;
+}
 
 
 
