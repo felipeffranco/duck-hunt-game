@@ -50,6 +50,7 @@ import Duck from './duck.js'
 class NewGame {
     constructor() {
         this.linkButtons()
+        this.isStarted = false;
     }
 
     shoot(e) {
@@ -58,14 +59,20 @@ class NewGame {
     }
 
     start() {
-        console.log('start');
+        if(!this.isStarted) {
+            this.isStarted = true;
+            const firstDuck = document.createElement('div')
+            const secondDuck = document.createElement('div')
+            firstDuck.id = 'duck1'
+            secondDuck.id = 'duck2'
+            firstDuck.style.cursor = 'pointer'
+            secondDuck.style.cursor = 'pointer'
+            firstDuck.addEventListener('click', game.shoot)
+            secondDuck.addEventListener('click', game.shoot)
+            document.getElementsByClassName('flight-area')[0].appendChild(firstDuck)
+            document.getElementsByClassName('flight-area')[0].appendChild(secondDuck)    
+        }
 
-        const firstDuck = document.createElement('div')
-        firstDuck.id = 'duck1'
-        firstDuck.style.cursor = 'pointer'
-        firstDuck.addEventListener('click', game.shoot)
-        
-        document.getElementsByClassName('flight-area')[0].appendChild(firstDuck)
 
         //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
         // if (this.level == 1) {
@@ -78,13 +85,19 @@ class NewGame {
         // }
     }
 
-    resumeGame() {
-        console.log('resume');
+    restart() {
+        if(!this.isStarted) {
+
+        }
     }
 
     pause() {
         console.log('pause');
         animation.pause();
+    }
+
+    resumeGame() {
+        console.log('resume');
     }
 
     mute() {
