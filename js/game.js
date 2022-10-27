@@ -84,6 +84,7 @@ class NewGame {
 
     pause() {
         console.log('pause');
+        animation.pause();
     }
 
     mute() {
@@ -91,16 +92,11 @@ class NewGame {
 
     }
 
-    openFullscreen() {
-        let body = document.documentElement;
-        if(body.requestFullscreen) {
-            body.requestFullscreen();
-        } else if(body.msRequestFullscreen) {
-            body.msRequestFullscreen();
-        } else if(body.mozRequestFullscreen) {
-            body.mozRequestFullscreen();
-        } else if(body.webkitRequestFullscreen) {
-            body.webkitRequestFullscreen();
+    fullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+            document.exitFullscreen();
         }
     }
 
@@ -110,9 +106,36 @@ class NewGame {
 
     linkButtons() {
         let startGame = document.querySelector('#start-game').addEventListener('click', this.start)
+        let changeToRestart = document.querySelector('#start-game');
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                game.start();
+                changeToRestart.innerHTML = `restart game (r)`
+            }
+        }, false);
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "r") {
+                game.start();
+                changeToRestart.innerHTML = `start game (enter)`
+            }
+        }, false);
+        
         let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
-        let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)
-        let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.Fullscreen)
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "p") {
+                game.pause();
+            }
+        }, false);
+
+        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/
+        
+        let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "f") {
+                game.fullscreen();
+            }
+        }, false);
     }
 }
 
