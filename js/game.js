@@ -44,12 +44,8 @@ After each shoot:
         reduce 1 bullet
 */
 
-class Targets {
-    constructor(urlImage, points) {
-        this.urlImage = urlImage;
-        this.points = points;
-    }
-}
+import Duck from './duck.js'
+//console.log(Duck)
 
 class NewGame {
     constructor(targets, waves, lifes, totalScore, totalTargets) {
@@ -59,34 +55,65 @@ class NewGame {
         this.lifes = lifes;
         this.totalScore = totalScore;
         this.totalTargets = totalTargets;
+
+        this.linkButtons()
     }
 
-    start() { //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
-        if(this.level == 1) {
-            console.log('level 1')
-            
-        } else if (this.level == 2) {
-            console.log('level 2')
-        } else if (this.level == 3) {
-            console.log('level 3')
-        }
+    shoot(e) {
+        console.log('alguém atirou em mim e eu vou morrer :)')
+        console.log(e)
     }
 
-    pause() {}
+    start() {
 
-    mute() {}
+        console.log('start');
 
-    fullscreen() {}
+        const firstDuck = document.createElement('div')
+        firstDuck.id = 'duck1'
+        firstDuck.style.cursor = 'pointer'
+        firstDuck.addEventListener('click', game.shoot)
+        
+        document.getElementsByClassName('flight-area')[0].appendChild(firstDuck)
 
-    shoot() {
-        //pensar de uma forma simples 
-        //console.log para click
+        //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
+        // if (this.level == 1) {
+        //     console.log('level 1')
+
+        // } else if (this.level == 2) {
+        //     console.log('level 2')
+        // } else if (this.level == 3) {
+        //     console.log('level 3')
+        // }
     }
 
-    win() {}
+    pause() {
+        console.log('pause');
 
-    lose() {}
+    }
+
+    mute() {
+        console.log('mute');
+
+    }
+
+    fullscreen() {
+        console.log('fullscreen');
+
+    }
+
+
+
+    win() { }
+
+    lose() { }
+
+    linkButtons() {
+        document.querySelector('#start-game').addEventListener('click', this.start)
+        document.querySelector('#pause-game').addEventListener('click', this.pause)
+        document.querySelector('#mute-game').addEventListener('click', this.mute)
+        document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
+    }
 }
 
-let game = new NewGame();
-game.start();
+const game = new NewGame();
+// game.start();
