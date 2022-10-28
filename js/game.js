@@ -86,8 +86,9 @@ class NewGame {
     }
 
     restart() {
-        if(!this.isStarted) {
-
+        if(this.isStarted) {
+            console.log('restart')
+            game.start();
         }
     }
 
@@ -100,10 +101,13 @@ class NewGame {
         console.log('resume');
     }
 
-    mute() {
+    /*mute() {
         console.log('mute');
+    }*/
 
-    }
+    win() { }
+
+    lose() { }
 
     fullscreen() {
         if (!document.fullscreenElement) {
@@ -112,10 +116,6 @@ class NewGame {
             document.exitFullscreen();
         }
     }
-
-    win() { }
-
-    lose() { }
 
     linkButtons() {
         let startGame = document.querySelector('#start-game').addEventListener('click', this.start)
@@ -129,7 +129,7 @@ class NewGame {
 
         document.addEventListener("keydown", (e) => {
             if (e.key === "r") {
-                game.start();
+                game.restart();
                 changeToRestart.innerHTML = `start game (enter)`
             }
         }, false);
