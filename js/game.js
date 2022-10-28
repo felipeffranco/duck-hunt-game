@@ -51,6 +51,7 @@ class NewGame {
     constructor() {
         this.linkButtons()
         this.isStarted = false;
+        this.isPaused = false;
     }
 
     shoot(e) {
@@ -70,9 +71,8 @@ class NewGame {
             firstDuck.addEventListener('click', game.shoot)
             secondDuck.addEventListener('click', game.shoot)
             document.getElementsByClassName('flight-area')[0].appendChild(firstDuck)
-            document.getElementsByClassName('flight-area')[0].appendChild(secondDuck)    
+            document.getElementsByClassName('flight-area')[0].appendChild(secondDuck)
         }
-
 
         //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
         // if (this.level == 1) {
@@ -86,10 +86,10 @@ class NewGame {
     }
 
     restart() {
-        if(this.isStarted) {
-            console.log('restart')
-            game.start();
-        }
+        console.log('restart')
+        this.firstDuck.style.display = 'none'
+        this.secondDuck.style.display = 'none'
+        game.start();
     }
 
     pause() {
@@ -100,10 +100,6 @@ class NewGame {
     resumeGame() {
         console.log('resume');
     }
-
-    /*mute() {
-        console.log('mute');
-    }*/
 
     win() { }
 
@@ -125,15 +121,16 @@ class NewGame {
                 game.start();
                 changeToRestart.innerHTML = `restart game (r)`
             }
-        }, false);
-
+        }, false);    
+    
         document.addEventListener("keydown", (e) => {
             if (e.key === "r") {
                 game.restart();
                 changeToRestart.innerHTML = `start game (enter)`
             }
-        }, false);
-        
+        }, false);    
+            
+
         let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
         document.addEventListener("keydown", (e) => {
             if (e.key === "p") {

@@ -110,45 +110,45 @@ body {
         top: 26%;
     }
     30% { 
-        left: 235px;
-        top: 15px;
+        left: 35%;
+        top: 55%;
     }
     40% { 
-        left: 440px;
-        top: 18px;
+        left: 43%;
+        top: 50%;
     }
     50% { 
-        left: 666px;
-        top: 23px;
+        left: 57%;
+        top: 25%;
     }
     60% { 
-        left: 778px;
-        top: 25px;
+        left: 66%;
+        top: 35%;
     }
     70% { 
-        left: 885px;
-        top: 28px;
+        left: 76%;
+        top: 20%;
     }
     80% { 
-        left: 998px;
-        top: 3px;
+        left: 82%;
+        top: 33%;
     }
     90% { 
-        left: 1700px;
-        top: 19px;
+        left: 95%;
+        top: 45%;
     }
     100% { 
-        left: 1700px;
-        top: 19px;
+        left: 150%;
+        top: -50%;
     }
 }
 
 #duck2 { 
     position: absolute;
-    top: 12px;
+    top: 50px;
     width: 40px;
     height: 33px;
-    animation: duck1 8.5s infinite; 
+    animation: duck2 8.5s infinite; 
     background: red url(../images/sprites.png) no-repeat 4px -150px;
 }
 
