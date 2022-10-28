@@ -50,8 +50,8 @@ import Duck from './duck.js'
 class NewGame {
     constructor() {
         this.linkButtons()
-        this.isStarted = false;
-        this.isPaused = false;
+        this.isStarted = false
+        this.isPaused = false
     }
 
     shoot(e) {
@@ -61,6 +61,7 @@ class NewGame {
 
     start() {
         if(!this.isStarted) {
+            console.log('start')
             this.isStarted = true;
             const firstDuck = document.createElement('div')
             const secondDuck = document.createElement('div')
@@ -87,18 +88,16 @@ class NewGame {
 
     restart() {
         console.log('restart')
-        this.firstDuck.style.display = 'none'
-        this.secondDuck.style.display = 'none'
         game.start();
     }
 
     pause() {
         console.log('pause');
-        animation.pause();
+        //animation.pause();
     }
 
-    resumeGame() {
-        console.log('resume');
+    unpause() {
+        console.log('unpause');
     }
 
     win() { }
@@ -132,11 +131,21 @@ class NewGame {
             
 
         let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
+        let changeToUnpause = document.querySelector('#pause-game');
         document.addEventListener("keydown", (e) => {
             if (e.key === "p") {
                 game.pause();
+                changeToUnpause.innerHTML = `unpause (u)`
             }
         }, false);
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "u") {
+                game.unpause();
+                changeToUnpause.innerHTML = `pause game (p)`
+            }
+        }, false);
+
 
         /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/
         
