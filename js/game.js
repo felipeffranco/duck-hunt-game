@@ -44,34 +44,36 @@ After each shoot:
         reduce 1 bullet
 */
 
-import Duck from './duck.js'
-//console.log(Duck)
+import Duck from './duck.js';
+
+let duck1 = new Duck;
+let duck2 = new Duck;
+let duck3 = new Duck;
+let duck4 = new Duck;
 
 class NewGame {
     constructor() {
         this.linkButtons()
         this.isStarted = false
         this.isPaused = false
-    }
+        this.actualLevel = this.level1;
+        this.level1 = [duck1, duck2];
+        /* this.level2 = [];
+        this.level3 = [duck1, duck2, duck3, duck4];    
+*/    }
 
     shoot(e) {
         console.log(e)
     }
 
     start() {
+        console.log(this.isStarted);
         if(!this.isStarted) {
             console.log('start')
             this.isStarted = true;
-            const firstDuck = document.createElement('div')
-            const secondDuck = document.createElement('div')
-            firstDuck.id = 'duck1'
-            secondDuck.id = 'duck2'
-            firstDuck.style.cursor = 'pointer'
-            secondDuck.style.cursor = 'pointer'
-            firstDuck.addEventListener('click', game.shoot)
-            secondDuck.addEventListener('click', game.shoot)
-            document.getElementsByClassName('flight-area')[0].appendChild(firstDuck)
-            document.getElementsByClassName('flight-area')[0].appendChild(secondDuck)
+            this.level1.map((duck) => {
+                duck.spawnDuck();
+            })
         }
 
         //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
@@ -87,6 +89,7 @@ class NewGame {
 
     level1() {
         console.log('level 1')
+        
     }
 
     level2() {
@@ -99,6 +102,17 @@ class NewGame {
 
     restart() {
         console.log('restart')
+        this.isStarted = false;
+        try { 
+            throw this.level1.map((duck) => {
+                duck.hideDuck();
+            })
+        }
+        catch(e) {
+
+        }
+
+        
     }
 
     pause() {
@@ -127,14 +141,15 @@ class NewGame {
 
     linkButtons() {
         let startGame = document.querySelector('#start-game').addEventListener('click', this.start)
-        let changeToRestart = document.querySelector('#start-game');
+        let changeToRestart = document.querySelector('#start-game')
+        //Type ENTER to START
         document.addEventListener("keydown", (e) => {
             if (e.key === "Enter") {
                 game.start();
                 changeToRestart.innerHTML = `restart game (r)`
             }
         }, false);    
-    
+        //Type R to RESTART   
         document.addEventListener("keydown", (e) => {
             if (e.key === "r") {
                 game.restart();
@@ -145,20 +160,21 @@ class NewGame {
 
         let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
         let changeToUnpause = document.querySelector('#pause-game');
+        //Type P to PAUSE
         document.addEventListener("keydown", (e) => {
             if (e.key === "p") {
                 game.pause();
                 changeToUnpause.innerHTML = `unpause (u)`
             }
         }, false);
-
+        //Type U to UNPAUSE
         document.addEventListener("keydown", (e) => {
             if (e.key === "u") {
                 game.unpause();
                 changeToUnpause.innerHTML = `pause game (p)`
             }
         }, false);
-
+        //Type F to FULLSCREEN
         let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
         document.addEventListener("keydown", (e) => {
             if (e.key === "f") {
