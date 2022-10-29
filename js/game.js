@@ -88,21 +88,23 @@ class NewGame {
 
     restart() {
         console.log('restart')
-        game.start();
     }
 
     pause() {
         console.log('pause');
-        //animation.pause();
     }
 
     unpause() {
         console.log('unpause');
     }
 
-    win() { }
+    win() {
+        console.log('win');
+    }
 
-    lose() { }
+    lose() {        
+        console.log('lose');
+    }
 
     fullscreen() {
         if (!document.fullscreenElement) {
@@ -146,15 +148,15 @@ class NewGame {
             }
         }, false);
 
-
-        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/
-        
         let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
         document.addEventListener("keydown", (e) => {
             if (e.key === "f") {
                 game.fullscreen();
             }
         }, false);
+
+        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/        
+
     }
 }
 
