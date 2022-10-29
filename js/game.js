@@ -55,7 +55,6 @@ class NewGame {
     }
 
     shoot(e) {
-        console.log('alguém atirou em mim e eu vou morrer :)')
         console.log(e)
     }
 
@@ -84,6 +83,18 @@ class NewGame {
         // } else if (this.level == 3) {
         //     console.log('level 3')
         // }
+    }
+
+    level1() {
+        console.log('level 1')
+    }
+
+    level2() {
+        console.log('level 2')
+    }
+
+    level3() {
+        console.log('level 3')
     }
 
     restart() {
@@ -155,8 +166,7 @@ class NewGame {
             }
         }, false);
 
-        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/        
-
+        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/            
     }
 }
 
