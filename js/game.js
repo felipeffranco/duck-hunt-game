@@ -103,17 +103,10 @@ class NewGame {
     restart() {
         console.log('restart')
         this.isStarted = false;
-        try { 
-            throw this.level1.map((duck) => {
-                duck.hideDuck();
-            })
-        }
-        catch(e) {
-
-        }
-
-        
-    }
+        this.level1.map((duck) => {
+            duck.hideDuck();
+        })
+}
 
     pause() {
         console.log('pause');
