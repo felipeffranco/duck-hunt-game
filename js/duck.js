@@ -1,17 +1,14 @@
 export default class Duck {
     constructor() {
-
     }   
 
-    randomFlight() {
-        var top=Math.random();
-        top=top*1000;   
-        var left=Math.random();
-        left=left*1000;                    
-        
-        const ducks = document.querySelectorAll('.duck');
-        
+    getRandom(min, max) {
+        var number = Math.floor((Math.random() * (max - min) + 1) + min);
+        return number;
     }
+
+    randomFlight() {
+    }     
 
     spawnDuck() {
         const duck = document.createElement('div')
@@ -20,8 +17,9 @@ export default class Duck {
         duck.style.position = 'absolute'
         //setInterval para fazer timer alternando X e Y 
         setInterval(() => {
-            this.randomFlight();
-        }, 500);
+            duck.style.top = Math.floor(Math.random()*65+5)+'%';
+            duck.style.left = Math.floor(Math.random()*90+5)+'%'; 
+        }, 1500);
         duck.addEventListener('click', this.gotShot)
         document.getElementsByClassName('flight-area')[0].appendChild(duck)
     }
