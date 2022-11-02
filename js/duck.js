@@ -1,36 +1,45 @@
 export default class Duck {
-
     constructor() {
+
     }   
 
-    randomDuck() {
-        var i = 0
-        , j = 0
-        , temp = null
-    
-      for (i = array.length - 1; i > 0; i -= 1) {
-        j = Math.floor(Math.random() * (i + 1))
-        temp = array[i]
-        array[i] = array[j]
-        array[j] = temp
-      }
+    randomFlight() {
+        this.xPosition = xPosition; //top
+        this.yPosition = yPosition; //left
+        const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
+        xPosition.style.left= getRandom(0, 300 - 200)+'px'; // 👈🏼 Horizontally
+        yPosition.style.top = getRandom(0, 300 - 200)+'px'; // 👈🏼 Vertically
+
+/*      const square= document.querySelector('.duck');
+        setInterval(() => {
+            square.style.left= getRandom(0, 300 - 200)+'px'; // 👈🏼 Horizontally
+            square.style.top = getRandom(0, 300 - 200)+'px'; // 👈🏼 Vertically
+        }, 500); // every 1/2 second
+ */        
+        
+        document.getElementById("square").style.top=top+"px";                   
+        document.getElementById("square").style.left=left+"px";       
     }
 
     spawnDuck() {
         const duck = document.createElement('div')
         duck.className = 'duck'
-        let random =
-        duck.style.position = 
         duck.style.cursor = 'pointer'
+        duck.style.position = 'absolute'
+        //setInterval para fazer timer alternando X e Y 
+        setInterval(() => {
+            console.log('entrou timer')
+            this.randomFlight;
+            //duck.style.top = duck.randomFlight.yPosition 
+            //duck.style.left = duck.randomFlight.xPosition
+        }, 500);
         duck.addEventListener('click', this.gotShot)
         document.getElementsByClassName('flight-area')[0].appendChild(duck)
-        //document.getElementsByClassName('flight-area')[0].appendChild(duck)
     }
 
     hideDuck() {
         const duck = document.querySelector('.duck')
         const flightArea = document.querySelector('.flight-area');
-        console.log(flightArea);
         flightArea.removeChild(duck);
     }
 

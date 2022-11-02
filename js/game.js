@@ -58,7 +58,7 @@ class NewGame {
         this.isPaused = false
         this.actualLevel = this.level1;
         this.level1 = [duck1, duck2];
-        /* this.level2 = [];
+        /* this.level2 = [duck1, duck2, duck3];
         this.level3 = [duck1, duck2, duck3, duck4];    
 */    }
 
@@ -67,7 +67,6 @@ class NewGame {
     }
 
     start() {
-        console.log(this.isStarted);
         if(!this.isStarted) {
             console.log('start')
             this.isStarted = true;
@@ -75,21 +74,10 @@ class NewGame {
                 duck.spawnDuck();
             })
         }
-
-        //iniciar a logica do jogo //enable game //aparecer funcoes e disponibilizar shoot //colocar botao
-        // if (this.level == 1) {
-        //     console.log('level 1')
-
-        // } else if (this.level == 2) {
-        //     console.log('level 2')
-        // } else if (this.level == 3) {
-        //     console.log('level 3')
-        // }
     }
 
     level1() {
         console.log('level 1')
-        
     }
 
     level2() {
@@ -106,7 +94,7 @@ class NewGame {
         this.level1.map((duck) => {
             duck.hideDuck();
         })
-}
+    }
 
     pause() {
         console.log('pause');

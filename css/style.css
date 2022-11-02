@@ -84,8 +84,10 @@ body {
 }
 
 .duck {
-    
     width: 40px;
     height: 33px;
     background: blue url(../images/sprites.png) no-repeat 4px -150px;
 }
+
+
+/* TRANSITION PARA SUAVIZAR O VOO DO PATO */
