@@ -43,6 +43,10 @@ body {
     
 }
 
+#lifes, #targets {
+    display: flex;
+}
+
 .lifes, .targets {
     margin-right: 1rem;
     padding: 8px 16px;  
@@ -84,9 +88,11 @@ body {
 }
 
 .duck {
+    position: absolute;
+    z-index: 9999999999999999;
     width: 40px;
     height: 33px;
-    background: blue url(../images/sprites.png) no-repeat 4px -150px;
+    background: transparent url(../images/sprites.png) no-repeat 4px -150px;
     transition: 3s linear infinite;
 }
 

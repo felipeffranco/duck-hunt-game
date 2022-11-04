@@ -49,7 +49,6 @@ import Duck from './duck.js';
 let duck1 = new Duck;
 let duck2 = new Duck;
 let duck3 = new Duck;
-let duck4 = new Duck;
 
 class NewGame {
     constructor() {
@@ -57,13 +56,7 @@ class NewGame {
         this.isStarted = false
         this.isPaused = false
         this.actualLevel = this.level1;
-        this.level1 = [duck1, duck2];
-        /* this.level2 = [duck1, duck2, duck3];
-        this.level3 = [duck1, duck2, duck3, duck4];    
-*/    }
-
-    shoot(e) {
-        console.log(e)
+        this.level1 = [duck1, duck2, duck3];
     }
 
     start() {
@@ -71,7 +64,7 @@ class NewGame {
             console.log('start')
             this.isStarted = true;
             this.level1.map((duck) => {
-                duck.spawnDuck();
+                duck.spawnDuck(false);
             })
         }
     }
@@ -80,28 +73,20 @@ class NewGame {
         console.log('level 1')
     }
 
-    level2() {
-        console.log('level 2')
-    }
-
-    level3() {
-        console.log('level 3')
-    }
-
     restart() {
-        console.log('restart')
-        this.isStarted = false;
-        this.level1.map((duck) => {
-            duck.hideDuck();
-        })
+        window.location.reload();
     }
 
     pause() {
-        console.log('pause');
+        this.level1.map((duck) => {
+            duck.clearDuck();
+        })
     }
 
     unpause() {
-        console.log('unpause');
+        this.level1.map((duck) => {
+            duck.unpauseDuck();
+        })
     }
 
     win() {
