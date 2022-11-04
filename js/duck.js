@@ -39,6 +39,7 @@ export default class Duck {
             duck.style.top = Math.floor(Math.random()*65+5)+'%';
             duck.style.left = Math.floor(Math.random()*90+5)+'%'; 
         }, 2500);
+        document.getElementsByClassName('flight-area')[0].appendChild(duck)
         duck.onclick = function () {
             duck.style.display = 'none'
             var queueTarget = document.getElementById('targets'); // Get the list whose id is queue.
@@ -49,8 +50,7 @@ export default class Duck {
                 alert('YOU WIN!')
             }
         };
-        document.getElementsByClassName('flight-area')[0].appendChild(duck)
-        document.getElementsByTagName('body')[0].onclick = function () {
+        document.querySelector('.flight-area').onclick = function () {
             var queueLifes = document.getElementById('lifes'); // Get the list whose id is queue.
             var elementsLifes = queueLifes.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
             elementsLifes[indexLifes].style.display = 'none';

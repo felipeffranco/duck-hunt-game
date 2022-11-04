@@ -47,7 +47,7 @@ body {
     display: flex;
 }
 
-.lifes, .targets {
+.lifes div, .targets div {
     margin-right: 1rem;
     padding: 8px 16px;  
     border-radius: 16px;
