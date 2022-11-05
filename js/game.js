@@ -60,7 +60,8 @@ class NewGame {
 
     start() {
         if(!this.isStarted) {
-            console.log('start')
+            document.getElementsByTagName('body').innerHTML = `<audio src="./sounds/duck-hunt.mp3" id="duckSound" loop="loop" autoplay="autoplay"></audio>`
+            /*document.getElementById("duckSound").play();*/
             this.isStarted = true;
             this.level1.map((duck) => {
                 duck.spawnDuck();

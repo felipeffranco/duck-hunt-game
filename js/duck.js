@@ -42,38 +42,38 @@ export default class Duck {
             duck.style.left = Math.floor(Math.random()*90+5)+'%'; 
         }, 2500);
         document.getElementsByClassName('flight-area')[0].appendChild(duck)
-    
 
         document.querySelector('.flight-area').onclick = function (e) {
-
             var isflightArea = (e.srcElement.getAttribute("name") == "flight-area");
             var isDuck = (e.srcElement.getAttribute("name") == "duck")   
             
             if(isDuck) {
-
                 duck.style.display = 'none'
                 var queueTarget = document.getElementById('targets'); // Get the list whose id is queue.
                 var elementsTarget = queueTarget.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
-                elementsTarget[indexTarget].style.display = 'none';
+                elementsTarget[indexTarget].style.opacity = '0.3';
                 indexTarget++;
                 if(indexTarget == 3) {
                     alert('YOU WIN!')
                 }
-                
             }
-
             
             if(isflightArea) {
-
-                for(var i =0; i < document.getElementsByName('life').length; i++) {
+                var queueTarget = document.getElementById('lifes'); // Get the list whose id is queue.
+                var elementsTarget = queueTarget.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
+                elementsTarget[indexLifes].style.opacity = '0.3';
+                indexLifes++;
+                if(indexLifes == 3) {
+                    alert('YOU LOSE!')
+                }
+                /*let lengthLifes = document.getElementsByName('life').length;
+                for(var i =0; i < lengthLifes; i++) {
                     if(document.getElementsByName('life')[i].getAttribute("hidden") != "true") {
                         document.getElementsByName('life')[i].setAttribute("hidden", true)
-                        document.getElementsByName('life')[i].style.display = 'none';
                         break;
                     }
-                }
+                }*/
             }
-
         }
         arrInterval.push(stopInterval);
         arrDuck.push(duck);
