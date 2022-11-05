@@ -7,6 +7,10 @@ export default class Duck {
     constructor() {
     }   
 
+    restart() {
+        window.location.reload();
+    }
+
     getRandom(min, max) {
         var number = Math.floor((Math.random() * (max - min) + 1) + min);
         return number;
@@ -65,14 +69,8 @@ export default class Duck {
                 indexLifes++;
                 if(indexLifes == 3) {
                     alert('YOU LOSE!')
+                    duck.restart();
                 }
-                /*let lengthLifes = document.getElementsByName('life').length;
-                for(var i =0; i < lengthLifes; i++) {
-                    if(document.getElementsByName('life')[i].getAttribute("hidden") != "true") {
-                        document.getElementsByName('life')[i].setAttribute("hidden", true)
-                        break;
-                    }
-                }*/
             }
         }
         arrInterval.push(stopInterval);

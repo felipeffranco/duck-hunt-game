@@ -50,7 +50,7 @@ let duck1 = new Duck;
 let duck2 = new Duck;
 let duck3 = new Duck;
 
-class NewGame {
+export default class NewGame {
     constructor() {
         this.linkButtons();
         this.isStarted = false;
