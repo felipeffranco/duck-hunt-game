@@ -52,7 +52,9 @@ export default class Duck {
             var isDuck = (e.srcElement.getAttribute("name") == "duck")   
             
             if(isDuck) {
-                duck.style.display = 'none'
+                var ducks = document.querySelector('.flight-area'); // Get the list whose id is queue.
+                var ducksTarget = ducks.getElementsByTagName('div'); // 
+                ducksTarget[indexTarget].style.display = 'none'
                 var queueTarget = document.getElementById('targets'); // Get the list whose id is queue.
                 var elementsTarget = queueTarget.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
                 elementsTarget[indexTarget].style.opacity = '0.3';
@@ -69,7 +71,6 @@ export default class Duck {
                 indexLifes++;
                 if(indexLifes == 3) {
                     alert('YOU LOSE!')
-                    duck.restart();
                 }
             }
         }
