@@ -50,7 +50,7 @@ export default class Duck {
                 alert('YOU WIN!')
             }
         };
-        document.querySelector('.flight-area').onclick = function () {
+        document.querySelector('.flight-area')[0].onclick = function () {
             var queueLifes = document.getElementById('lifes'); // Get the list whose id is queue.
             var elementsLifes = queueLifes.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
             elementsLifes[indexLifes].style.display = 'none';
