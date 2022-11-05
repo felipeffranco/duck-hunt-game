@@ -28,8 +28,8 @@ CONTROLS
     mouse left click (shoot)
 
 REQUIREMENTS 
-    WIN (> 80% objects killed per level)
-    LOSE (< 80% objects killed per level)
+    WIN (> 100% objects killed per level)
+    LOSE (< 10 b0% objects killed per level)
 
 
 After each shoot:
@@ -119,6 +119,7 @@ export default class NewGame {
                 changeToRestart.innerHTML = `restart game (r)`
             }
         }, false);    
+        
         //Type R to RESTART   
         document.addEventListener("keydown", (e) => {
             if (e.key === "r") {
@@ -141,7 +142,6 @@ export default class NewGame {
                 changeToUnpause.innerHTML = `pause (p)`
                 changeToUnpause.setAttribute("func","pause")
              }
-
         }
 
         //Type P to PAUSE
@@ -151,6 +151,7 @@ export default class NewGame {
                 changeToUnpause.innerHTML = `unpause (u)`
             }
         }, false);
+
         //Type U to UNPAUSE
         document.addEventListener("keydown", (e) => {
             if (e.key === "u") {
@@ -158,6 +159,7 @@ export default class NewGame {
                 changeToUnpause.innerHTML = `pause game (p)`
             }
         }, false);
+
         //Type F to FULLSCREEN
         let fullscreen = document.querySelector('#screen-game').addEventListener('click', this.fullscreen)
         document.addEventListener("keydown", (e) => {
@@ -165,10 +167,7 @@ export default class NewGame {
                 game.fullscreen();
             }
         }, false);
-
-        /*let muteGame = document.querySelector('#mute-game').addEventListener('click', this.mute)*/            
     }
 }
 
 let game = new NewGame();
-// game.start();

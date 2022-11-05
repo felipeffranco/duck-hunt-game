@@ -9,6 +9,10 @@ body {
     padding: 0;
 }
 
+.none {
+    display: none;
+}
+
 .background {
     width: 100vw;
     height: 100vh;
