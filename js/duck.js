@@ -33,6 +33,8 @@ export default class Duck {
         let stopInterval = null;
         const duck = document.createElement('div')
         duck.className = 'duck'
+        duck.atr = 'duck'
+        duck.setAttribute("name", "duck");
         duck.style.cursor = 'pointer'
         duck.style.position = 'absolute'
         stopInterval = setInterval(() => {
@@ -40,25 +42,39 @@ export default class Duck {
             duck.style.left = Math.floor(Math.random()*90+5)+'%'; 
         }, 2500);
         document.getElementsByClassName('flight-area')[0].appendChild(duck)
-        duck.onclick = function () {
-            duck.style.display = 'none'
-            var queueTarget = document.getElementById('targets'); // Get the list whose id is queue.
-            var elementsTarget = queueTarget.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
-            elementsTarget[indexTarget].style.display = 'none';
-            indexTarget++;
-            if(indexTarget == 3) {
-                alert('YOU WIN!')
+    
+
+        document.querySelector('.flight-area').onclick = function (e) {
+
+            var isflightArea = (e.srcElement.getAttribute("name") == "flight-area");
+            var isDuck = (e.srcElement.getAttribute("name") == "duck")   
+            
+            if(isDuck) {
+
+                duck.style.display = 'none'
+                var queueTarget = document.getElementById('targets'); // Get the list whose id is queue.
+                var elementsTarget = queueTarget.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
+                elementsTarget[indexTarget].style.display = 'none';
+                indexTarget++;
+                if(indexTarget == 3) {
+                    alert('YOU WIN!')
+                }
+                
             }
-        };
-        document.querySelector('.flight-area')[0].onclick = function () {
-            var queueLifes = document.getElementById('lifes'); // Get the list whose id is queue.
-            var elementsLifes = queueLifes.getElementsByTagName('div'); // Get HTMLCollection of elements with the li tag name.
-            elementsLifes[indexLifes].style.display = 'none';
-            indexLifes++;
-            if(indexLifes == 3) {
-                alert('GAME OVER')
+
+            
+            if(isflightArea) {
+
+                for(var i =0; i < document.getElementsByName('life').length; i++) {
+                    if(document.getElementsByName('life')[i].getAttribute("hidden") != "true") {
+                        document.getElementsByName('life')[i].setAttribute("hidden", true)
+                        document.getElementsByName('life')[i].style.display = 'none';
+                        break;
+                    }
+                }
             }
-        };
+
+        }
         arrInterval.push(stopInterval);
         arrDuck.push(duck);
     }

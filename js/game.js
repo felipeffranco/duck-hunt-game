@@ -52,10 +52,9 @@ let duck3 = new Duck;
 
 class NewGame {
     constructor() {
-        this.linkButtons()
-        this.isStarted = false
-        this.isPaused = false
-        this.actualLevel = this.level1;
+        this.linkButtons();
+        this.isStarted = false;
+        this.isPaused = false;
         this.level1 = [duck1, duck2, duck3];
     }
 
@@ -64,7 +63,7 @@ class NewGame {
             console.log('start')
             this.isStarted = true;
             this.level1.map((duck) => {
-                duck.spawnDuck(false);
+                duck.spawnDuck();
             })
         }
     }
@@ -106,8 +105,12 @@ class NewGame {
     }
 
     linkButtons() {
-        let startGame = document.querySelector('#start-game').addEventListener('click', this.start)
-        let changeToRestart = document.querySelector('#start-game')
+        let changeToRestart = document.querySelector('#start-game') 
+        document.querySelector('#start-game').onclick = function(){
+            changeToRestart.innerHTML = `restart game (r)`
+            game.start();
+        };
+
         //Type ENTER to START
         document.addEventListener("keydown", (e) => {
             if (e.key === "Enter") {
@@ -122,10 +125,24 @@ class NewGame {
                 changeToRestart.innerHTML = `start game (enter)`
             }
         }, false);    
-            
 
-        let pauseGame = document.querySelector('#pause-game').addEventListener('click', this.pause)
         let changeToUnpause = document.querySelector('#pause-game');
+        document.querySelector('#pause-game').onclick = function() {
+            
+            if(changeToUnpause.getAttribute("func") == "pause") {
+                game.pause();
+                changeToUnpause.innerHTML = `unpause (u)`;
+                changeToUnpause.setAttribute("func","unpause")
+    
+            }
+             else {
+                game.unpause();
+                changeToUnpause.innerHTML = `pause (p)`
+                changeToUnpause.setAttribute("func","pause")
+             }
+
+        }
+
         //Type P to PAUSE
         document.addEventListener("keydown", (e) => {
             if (e.key === "p") {
